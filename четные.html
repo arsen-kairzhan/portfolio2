@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        let numbers = [7, 23, 41, 4]
+
+        function numberfortask(ara) {
+            let count = 0;
+            for (let i = 0; i < ara.length; i++) {
+                if (ara[i] % 2 === 0) {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        var resultat = numberfortask(numbers)
+        console.log("четные числа в '" + numbers + "' = " + resultat)
+
+
+
+
+
+        let num = 8765
+
+        const fourd = Math.floor(num / 1000);
+        const threrd = Math.floor((num % 1000) / 100);
+        const second = Math.floor((num % 100) / 10);
+        const first = num % 10;
+
+        let numbermass = [first, second, threrd, fourd]
+
+        var resmass = numberfortask(numbermass)
+        console.log("четных цифры в '" + num + "' это: " + resmass)
+    </script>
+</body>
+</html>

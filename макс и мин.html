@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>сумма макс и мин цифры</h1>
+    <p>ведите трехзначное число</p>
+    <input type="text" id="z">
+    <button onclick="qwe()">Посчитать</button>
+    <p id="result"></p>
+
+    <script>
+
+        function qwe() {
+            let num = document.getElementById('z').value;
+
+            if (isNaN(num)) {
+                document.getElementById("result").innerText = "Пожалуйста введите трехзначное число";
+                return;
+            }
+
+            
+
+            let a = parseInt(num[0]);
+            let b = parseInt(num[1]);
+            let c = parseInt(num[2]);
+
+            let min = Math.min(a, b, c,);
+            let max = Math.max(a, b, c,);
+            let sum = max+min;
+
+            document.getElementById("result").innerText= "Сумма максимальной и минимальной цифры " + sum;
+        }
+    </script>
+</body> 
+</html>

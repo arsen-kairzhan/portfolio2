@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function qwe() {
+            const word = document.getElementById('inputString').value;
+            var result = '';
+
+            if (word.includes('а')) {
+                result += 'здесь есть "а" <br>';
+            } else {
+                result += 'здесь нет "а" <br>';
+            }
+
+            if (word.includes('м') && word.includes('ы')) {
+                result += 'здесь есть "мы"';
+            } else {
+                result += 'здесь нет "мы" <br>';
+            }
+
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</head>
+<body>
+    
+    <input type="text" id="inputString">
+
+    <button onclick="qwe()">Проверить</button>
+
+    <p id="result"></p>
+
+</body>
+</html>

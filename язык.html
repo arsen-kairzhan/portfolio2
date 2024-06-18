@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function language() {
+            var lang = document.getElementById("lang").value
+            var a;
+
+            switch (lang) {
+                case "ru":
+                    a = "русский";
+                break;
+                
+                case "en":
+                    a = "английский";
+                break;
+                
+                case "fr":
+                    a = "французский";
+                    break;
+                
+                case "de":
+                    a = "немецкий";
+                break;
+                
+                default:
+                    a = "Язык неизвестен";
+            }
+
+            document.getElementById("r").innerText = a;
+        }
+    </script>
+</head>
+<body>
+    <p>Введите значение переменной lang (ru, en, fr, de):</p>
+    <input type="text" id="lang">
+    <br>
+    <br>
+    <button onclick="language()">Определить язык</button>
+    <p id="r"></p>
+
+
+</body>
+</html>

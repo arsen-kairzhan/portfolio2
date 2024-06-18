@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>светофор</h1>
+    <h3>красный 30 сек, желтый 5 сек, зеленый 20 сек</h3>
+    <img id="photo" src="img/red.jpg" alt="">
+    <br>
+    <br>
+    <button onclick="changetored()">Красный</button>
+    <button onclick="changetoyellow()">Желтый</button>
+    <button onclick="changetogreen()">Зеленый</button>
+    <button onclick="continueChange()">Продолжить</button>
+
+    <script>
+        function changetored(){
+            const photo = document.getElementById("photo");
+            photo.src = "img/red.jpg";
+        }
+
+        function changetoyellow(){
+            const photo = document.getElementById("photo");
+            photo.src = "img/yellow.jpg";
+        }
+
+        function changetogreen(){
+            const photo = document.getElementById("photo");
+            photo.src = "img/green.jpg";
+        }
+
+        var images = ['img/red.jpg', 'img/yellow.jpg', 'img/green.jpg'];
+        var imgElement = document.getElementById('photo');
+        var index = 0;
+        var intervals = [20000, 30000, 5000];
+
+        function changeImage() {
+            imgElement.src = images[index];
+            index = (index + 1) % images.length;
+            setTimeout(changeImage, intervals[index]);
+        }
+
+        function continueChange() {
+            if (index === 1) {
+                setTimeout(changeImage, 2000);
+            } else {
+                changeImage();
+            }
+        }
+
+        window.onload = function() {
+            changeImage();
+        };
+    </script>
+</body>
+</html>

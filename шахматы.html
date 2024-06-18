@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <script>
+        function Rook(a, b, c, d) {
+            return a === c || b === d;
+        }
+
+        function Bishop(a, b, c, d) {
+            return Math.abs(a - c) === Math.abs(b - d);
+        }
+
+        function King(a, b, c, d) {
+            return Math.abs(a - c) <= 1 && Math.abs(b - d) <= 1;
+        }
+
+        function Queen(a, b, c, d) {
+            return Rook(a, b, c, d) || Bishop(a, b, c, d);
+        }
+
+        function checkThreats() {
+            let a = parseInt(document.getElementById('a').value);
+            let b = parseInt(document.getElementById('b').value);
+            let c = parseInt(document.getElementById('c').value);
+            let d = parseInt(document.getElementById('d').value);
+
+            if (a > 8 || b > 8 || c > 8 || d > 8 || a < 1 || b < 1 || c < 1 || d < 1) {
+                alert("Введите числа от 1 до 8");
+                return;
+            }
+
+            document.getElementById('rook').textContent = Rook(a, b, c, d) ? "Да" : "Нет";
+            document.getElementById('bishop').textContent = Bishop(a, b, c, d) ? "Да" : "Нет";
+            document.getElementById('king').textContent = King(a, b, c, d) ? "Да" : "Нет";
+            document.getElementById('queen').textContent = Queen(a, b, c, d) ? "Да" : "Нет";
+        }
+    </script>
+</head>
+    <form onsubmit="event.preventDefault(); checkThreats();">
+        <label>Угроза:</label><br><br>
+        <label>вертикаль:</label>
+        <input type="number" id="a" min="1" max="8" required><br><br>
+        <label>горизонталь:</label>
+        <input type="number" id="b" min="1" max="8" required><br><br>
+
+        <label>Цель:</label><br><br>
+        <label>вертикаль:</label>
+        <input type="number" id="c" min="1" max="8" required><br><br>
+        <label>горизонталь:</label>
+        <input type="number" id="d" min="1" max="8" required><br><br>
+
+        <button type="submit">Проверить</button>
+    </form>
+
+    <p>Ладья угрожает: <span id="rook"></span></p>
+    <p>Слон угрожает: <span id="bishop"></span></p>
+    <p>Король попадет к цели одним ходомё: <span id="king"></span></p>
+    <p>Ферзь угрожает: <span id="queen"></span></p>
+</body>
+</html>

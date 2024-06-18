@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Сортировка переменных</title>
+</head>
+<body>
+    <script>
+        let a = 5;
+        let b = 6;
+        let c = 15;
+        let d = 7;
+        let e = 12;
+
+        if (a < b && a < c && a < d && a < e) {
+            console.log("Наименшая переменная:", a);
+        }
+
+        else if (b < a && b < c && b < d && b < e) {
+            console.log("Наименшая переменная:", b);
+        }
+
+        else if (c < a && c < b && c < d && c < e) {
+            console.log("Наименшая переменная:", c);
+        }
+
+        else if (d < a && d < b && d < c && d < e) {
+            console.log("Наименшая переменная:", d);
+        }
+
+        else if (e < a && e < b && e < c && e < d) {
+            console.log("Наименшая переменная:", e);
+        }
+
+        let numbers = [a, b, c, d, e];
+
+        let max = Math.max(...numbers);
+        console.log('Наибольшая переменная:', max);
+        document.write("<p>Наибольшая переменная:"   + max + "</p>");
+        
+        let sorte = numbers.sort((x, y) => y - x);
+        console.log("Переменные по убыванию:", sorte);
+        document.write("<p>Переменные по убыванию: " + sorte.join(", ") + "</p>");
+
+        const sum = [666].reduce((partialSum, a) => partialSum + a, 0);
+        console.log("Сумма из трех чисел: "+sum); 
+
+        const digits = sum.toString().split("");
+        const total = digits.reduce((acc, digit) => acc + parseInt(digit), 0);
+
+    </script>
+</body>
+</html>

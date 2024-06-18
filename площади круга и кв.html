@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сравнение площадей круга и квадрата</title>
+</head>
+<body>
+
+    <form>
+        <label for="circle">круг:</label>
+        <input type="number" id="circle" name="circle"><br><br>
+
+        <label for="squara">квадрат:</label>
+        <input type="number" id="squara" name="squara"><br><br>
+
+        <button type="button" onclick="qwe()">Сравнить</button>
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        function qwe() {
+            var circle = document.getElementById("circle").value;
+            var squara = document.getElementById("squara").value;
+
+            var circleS = Math.PI * circle ** 2;
+            var squareS = squara ** 2;
+
+            var result;
+
+            if (circleS > squareS) {
+                result = "Площадь круга больше.";
+            } else if (circleS < squareS) {
+                result = "Площадь квадрата больше.";
+            } else {
+                result = "Площади равны.";
+            }
+
+            document.getElementById("result").innerHTML = result;
+        }
+    </script>
+</body>
+</html>

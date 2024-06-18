@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documnet</title>
+</head>
+<body>
+    <p>вес боксера</p>
+    <input type="number" id="ves">
+    <button onclick="qwe()">категория</button>
+    <div id="result"></div>
+
+    <script>
+        function qwe() {
+            const boxer = parseFloat(document.getElementById('ves').value);
+            const div = document.getElementById('result');
+            let category;
+
+            if (isNaN(boxer) || boxer <= 0) {
+                category = 'Пожалуйста, введите вес.';
+            } else if (boxer < 60) {
+                category = 'Легкий вес';
+            } else if (boxer < 64) {
+                category = 'Первый полусредний вес';
+            } else if (boxer < 69) {
+                category = 'Полусредний вес';
+            } else {
+                category = 'Вес слишком большой';
+            }
+
+            div.textContent = 'Категория: ' + category;
+        }
+    </script>
+</body>
+</html>
